@@ -1,0 +1,8 @@
+.row:last-child .col {
+    text-align: center;
+}
+
+.row:last-child .col .btn {
+    padding: 5px 50px;
+    text-transform: capitalize;
+}

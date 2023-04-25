@@ -1,0 +1,11 @@
+.bg-gradients {
+    background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+}
+
+.container.mt-5 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
