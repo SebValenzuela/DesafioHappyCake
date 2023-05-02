@@ -33,7 +33,9 @@ export default () => {
                                     <Card.Title>{character.name}</Card.Title>
                                     <Card.Text>
                                         <p>Especie: {character.species}</p>
+                                        <p>Tipo de Especie: {character.type}</p>
                                         <p>Estado: {character.status}</p>
+                                        <p>Género : {character.gender}</p>
                                     </Card.Text>
                                     <Button variant="primary" onClick={() => handleClick(character.id)}>Favorito</Button>
                                 </Card.Body>
