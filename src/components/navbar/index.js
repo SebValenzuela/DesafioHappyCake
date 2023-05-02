@@ -9,9 +9,7 @@ export default () => {
                     <Navbar.Brand className='text-primary'>ReactRouter</Navbar.Brand>
                     <Nav className='me-auto'>
                         <Link className='text-white ms-3 text-decoration-none' to="/">Home</Link>
-                        <Link className='text-white ms-3 text-decoration-none' to="/form">Form</Link>
-                        <Link className='text-white ms-3 text-decoration-none' to="/contact">Contact</Link>
-                        <Link className='text-white ms-3 text-decoration-none' to="/blog">Blog</Link>
+                        <Link className='text-white ms-3 text-decoration-none' to="/contact">Form</Link>
                     </Nav>
                 </Container>
             </Navbar>

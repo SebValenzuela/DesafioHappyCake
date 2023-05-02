@@ -1,18 +1,48 @@
-import '../assets/general.css'
-import './home.css'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { useContext } from 'react'
+import Context from '../../context'
 
 export default () => {
+
+    const {characters, setCharacters} = useContext(Context)
+
+    const handleClick = (id) => {
+        const character = characters.map(val => {
+            if (val.id === id) {
+                if (val.favorito === false){
+                    return {...val, favorito:true}
+                }
+                return {...val, favorito:false}
+            }
+            return val
+        })
+        character.favorito = true
+        setCharacters(character)
+    }
+
     return (
         <>
-            <h1 className="home-class"> 
+            <div className="home-class"> 
                 <Container>
-                    <Row>
-                        <Col>Jedi Knight</Col>
-                        <Col><img src='https://w7.pngwing.com/pngs/452/436/png-transparent-anakin-skywalker-star-wars-jedi-knight-ii-jedi-outcast-stormtrooper-star-wars-jedi-knight-ii-jedi-outcast-stormtrooper-leaf-logo-monochrome-thumbnail.png'></img></Col>
+                    <Row className='align-items-center'>
+                        {characters ? characters.map(character => 
+                        <Col lg={4} md={12} className='my-4'>
+                            <Card>
+                                <Card.Img variant="top" src={character.image}/>
+                                <Card.Body>
+                                    <Card.Title>{character.name}</Card.Title>
+                                    <Card.Text>
+                                        <p>Especie: {character.species}</p>
+                                        <p>Estado: {character.status}</p>
+                                    </Card.Text>
+                                    <Button variant="primary" onClick={() => handleClick(character.id)}>Favorito</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                        ) : <p>loading...</p>}
                     </Row>
                 </Container>
-            </h1>
+            </div>
         </>
     )
 }
