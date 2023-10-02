@@ -1,0 +1,15 @@
+.home-body {
+    text-align: center;
+}
+
+.title {
+    font-weight: 300;
+}
+
+.title span {
+    font-weight: 900;
+}
+
+.principal-img {
+    width: 200px;
+}
